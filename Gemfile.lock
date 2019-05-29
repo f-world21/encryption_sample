@@ -64,6 +64,10 @@ GEM
     byebug (11.0.1)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
+    dotenv (2.7.2)
+    dotenv-rails (2.7.2)
+      dotenv (= 2.7.2)
+      railties (>= 3.2, < 6.1)
     encryptor (3.0.0)
     erubi (1.8.0)
     execjs (2.7.0)
@@ -185,6 +189,7 @@ DEPENDENCIES
   aws-sdk-kms
   bootsnap (>= 1.1.0)
   byebug
+  dotenv-rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   mysql2 (>= 0.4.4, < 0.6.0)
