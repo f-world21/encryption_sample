@@ -1,7 +1,7 @@
 class PersonalInfo < ApplicationRecord
   include KmsKey
 
-  enum sex: { M: 'M', F: 'F' }
+  enum sex: { male: 'M', female: 'F' }
 
   attr_encrypted :first_name,       key: :data_key, algorithm: 'aes-256-gcm'
   attr_encrypted :last_name,        key: :data_key, algorithm: 'aes-256-gcm'

@@ -20,10 +20,10 @@
     = f.text_field :last_name_read
   .field
     = f.label :date_of_birth
-    = f.date_select :date_of_birth
+    = f.date_select :date_of_birth, end_year: Date.current.year - 100, start_year: Date.current.year - 13
   .field
     = f.label :sex
-    = f.text_field :sex
+    = f.select :sex, PersonalInfo.sexes
   .field
     = f.label :postal_code
     = f.text_field :postal_code

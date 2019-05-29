@@ -69,6 +69,17 @@ class PersonalInfosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def personal_info_params
-      params.require(:personal_info).permit(:first_name, :last_name, :first_name_read, :last_name_read, :date_of_birth, :sex, :postal_code, :address, :tel)
+      result_prams = params
+                       .require(:personal_info)
+                       .permit(
+                          :first_name, :last_name,
+                          :first_name_read, :last_name_read,
+                          :date_of_birth, :sex,
+                          :postal_code, :address, :tel
+                        )
+      if result_prams['date_of_birth(1i)'].present? && result_prams['date_of_birth(2i)'].present? && result_prams['date_of_birth(3i)'].present?
+        result_prams[:date_of_birth] = Date.parse("#{result_prams['date_of_birth(1i)']}-#{result_prams['date_of_birth(2i)']}-#{result_prams['date_of_birth(3i)']}")
+      end
+      result_prams
     end
 end
