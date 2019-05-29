@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @personal_info.first_name
+%p
+  %b Last name:
+  = @personal_info.last_name
+%p
+  %b First name read:
+  = @personal_info.first_name_read
+%p
+  %b Last name read:
+  = @personal_info.last_name_read
+%p
+  %b Date of birth:
+  = @personal_info.date_of_birth
+%p
+  %b Sex:
+  = @personal_info.sex
+%p
+  %b Postal code:
+  = @personal_info.postal_code
+%p
+  %b Address:
+  = @personal_info.address
+%p
+  %b Tel:
+  = @personal_info.tel
+
+= link_to 'Edit', edit_personal_info_path(@personal_info)
+\|
+= link_to 'Back', personal_infos_path
