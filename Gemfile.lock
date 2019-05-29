@@ -43,6 +43,20 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (9.0.0)
+    attr_encrypted (3.1.0)
+      encryptor (~> 3.0.0)
+    aws-eventstream (1.0.3)
+    aws-partitions (1.168.0)
+    aws-sdk-core (3.54.0)
+      aws-eventstream (~> 1.0, >= 1.0.2)
+      aws-partitions (~> 1.0)
+      aws-sigv4 (~> 1.1)
+      jmespath (~> 1.0)
+    aws-sdk-kms (1.21.0)
+      aws-sdk-core (~> 3, >= 3.53.0)
+      aws-sigv4 (~> 1.1)
+    aws-sigv4 (1.1.0)
+      aws-eventstream (~> 1.0, >= 1.0.2)
     bindex (0.7.0)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
@@ -50,6 +64,7 @@ GEM
     byebug (11.0.1)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
+    encryptor (3.0.0)
     erubi (1.8.0)
     execjs (2.7.0)
     ffi (1.11.1)
@@ -59,6 +74,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
+    jmespath (1.4.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -165,6 +181,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  attr_encrypted
+  aws-sdk-kms
   bootsnap (>= 1.1.0)
   byebug
   jbuilder (~> 2.5)
