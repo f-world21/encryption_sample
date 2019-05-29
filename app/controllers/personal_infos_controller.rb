@@ -74,7 +74,7 @@ class PersonalInfosController < ApplicationController
                        .permit(
                           :first_name, :last_name,
                           :first_name_read, :last_name_read,
-                          :date_of_birth, :sex,
+                          :date_of_birth, :gender,
                           :postal_code, :address, :tel
                         )
       if result_prams['date_of_birth(1i)'].present? && result_prams['date_of_birth(2i)'].present? && result_prams['date_of_birth(3i)'].present?

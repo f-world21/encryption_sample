@@ -11,8 +11,8 @@ class CreatePersonalInfos < ActiveRecord::Migration[5.2]
       t.string :encrypted_last_name_read_iv
       t.string :encrypted_date_of_birth
       t.string :encrypted_date_of_birth_iv
-      t.string :encrypted_sex
-      t.string :encrypted_sex_iv
+      t.string :encrypted_gender
+      t.string :encrypted_gender_iv
       t.string :encrypted_postal_code
       t.string :encrypted_postal_code_iv
       t.string :encrypted_address
