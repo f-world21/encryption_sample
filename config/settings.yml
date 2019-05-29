@@ -1,0 +1,12 @@
+default: &default
+  kms_cmk_id: <%= ENV['KMS_CMK_ID'] %>
+  aws_region: <%= ENV['AWS_REGION'].presence || 'ap-northeast-1' %>
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default

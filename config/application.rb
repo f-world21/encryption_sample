@@ -29,5 +29,8 @@ module EncrytptionSample
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.time_zone = 'Tokyo'
+    config.x.settings = Rails.application.config_for(:settings)
   end
 end
