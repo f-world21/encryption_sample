@@ -17,7 +17,7 @@
       %th
 
   %tbody
-    - @personal_infos.each do |personal_info|
+    - @all_personal_infos.each do |personal_info|
       %tr
         %td= personal_info.first_name
         %td= personal_info.last_name
@@ -35,3 +35,51 @@
 %br
 
 = link_to 'New Personal info', new_personal_info_path
+
+%h1 Searching
+
+%h3 By Last Name and Fist Name
+
+= form_with model: PersonalInfo.new, method: :get, local: true do |f|
+  = f.search_field :last_name_and_first_name
+  = f.submit 'Search'
+
+%h3 By Tel number
+
+= form_with model: PersonalInfo.new, method: :get, local: true do |f|
+  = f.search_field :tel
+  = f.submit 'Search'
+
+%h3 By Address
+
+= form_with model: PersonalInfo.new, method: :get, local: true do |f|
+  = f.search_field :address
+  = f.submit 'Search'
+
+%h3 Found personal infos
+
+%table
+  %thead
+    %tr
+      %th First name
+      %th Last name
+      %th First name read
+      %th Last name read
+      %th Date of birth
+      %th Gender
+      %th Postal code
+      %th Address
+      %th Tel
+
+  %tbody
+    - @personal_infos.each do |personal_info|
+      %tr
+        %td= personal_info.first_name
+        %td= personal_info.last_name
+        %td= personal_info.first_name_read
+        %td= personal_info.last_name_read
+        %td= personal_info.date_of_birth
+        %td= personal_info.gender
+        %td= personal_info.postal_code
+        %td= personal_info.address
+        %td= personal_info.tel

@@ -4,7 +4,16 @@ class PersonalInfosController < ApplicationController
   # GET /personal_infos
   # GET /personal_infos.json
   def index
-    @personal_infos = PersonalInfo.all
+    @all_personal_infos = PersonalInfo.all
+
+    if params[:personal_info].present?
+      field_name = params[:personal_info].keys.first
+      searching_value = params[:personal_info].values.first
+      hash_value = BCrypt::Engine.hash_secret(searching_value, ENV['HASH_SALT'])
+      @personal_infos = PersonalInfoHash.where(field_name: field_name, hash_value: hash_value).map(&:personal_info)
+    else
+      @personal_infos = []
+    end
   end
 
   # GET /personal_infos/1
