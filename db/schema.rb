@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_20_064654) do
+ActiveRecord::Schema.define(version: 2019_06_20_082609) do
 
   create_table "personal_info_hashes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "personal_info_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_06_20_064654) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["hash_value"], name: "index_personal_info_hashes_on_hash_value"
+    t.index ["personal_info_id", "field_name"], name: "index_personal_info_hashes_on_personal_info_id_and_field_name", unique: true
     t.index ["personal_info_id"], name: "index_personal_info_hashes_on_personal_info_id"
   end
 
